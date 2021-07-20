@@ -5,12 +5,13 @@ import java.util.List;
 
 public class StringSeparator {
     private List<String> strings;
+    private String delimiter;
 
-    StringSeparator(String delimiter, String input) {
-        this.strings = separate(delimiter, input);
+    StringSeparator(String delimiter) {
+        this.delimiter = delimiter;
     }
 
-    private List<String> separate(String delimiter, String input) {
+    public List<String> separate(String input) {
         return Arrays.asList(input.split(delimiter));
     }
 }

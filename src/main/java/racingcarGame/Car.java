@@ -12,7 +12,7 @@ public class Car {
     public void move(int dist) {
         CarStatus carStatus = doOneLap(dist);
         if (CarStatus.isPass(carStatus)) {
-            this.location += 1;
+            location += 1;
         }
     }
 
@@ -24,6 +24,10 @@ public class Car {
     }
 
     public int getLocation() {
-        return this.location;
+        return location;
+    }
+
+    public String getName() {
+        return name;
     }
 }
