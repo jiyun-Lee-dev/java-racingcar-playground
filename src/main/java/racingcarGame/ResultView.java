@@ -12,12 +12,11 @@ public class ResultView {
         }
         Set<String> keys = result.keySet();
         for (String key : keys) {
-            System.out.print( key + " : ");
-            System.out.println(getDistMark(result.get(key)));
+            System.out.println(key + " : " + getDistMark(result.get(key)));
         }
     }
 
-    public String getDistMark(int dist) {
+    private String getDistMark(int dist) {
         String mark = "";
         for(int i = 0; i < dist; i++) {
             mark += "-";

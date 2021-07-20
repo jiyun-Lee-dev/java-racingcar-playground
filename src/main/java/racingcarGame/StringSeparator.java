@@ -12,6 +12,7 @@ public class StringSeparator {
     }
 
     public List<String> separate(String input) {
-        return Arrays.asList(input.split(delimiter));
+        String removedBlank = input.replaceAll(" ", "");
+        return Arrays.asList(removedBlank.split(delimiter));
     }
 }

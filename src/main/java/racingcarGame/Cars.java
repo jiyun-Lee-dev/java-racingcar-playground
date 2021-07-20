@@ -31,10 +31,7 @@ public class Cars {
         return cars.size();
     }
 
-    public void moveCars(List<Integer> randomNumbers) throws Exception {
-        if (randomNumbers.size() != getSize()) {
-            throw new Exception("시스템 오류가 발생했습니다.");
-        }
+    public void moveCars(List<Integer> randomNumbers) {
         int index = 0;
         for (int randomNumber : randomNumbers) {
             cars.get(index).move(randomNumber);

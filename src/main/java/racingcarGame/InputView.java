@@ -11,9 +11,9 @@ public class InputView {
         return carNamesString;
     }
 
-    public FinalRoundNumber getInputForFinalRoundNumber() throws Exception {
+    public RoundNumber getInputForFinalRoundNumber() throws Exception {
         System.out.println("시도할 횟수는 몇회인가요?");
-        FinalRoundNumber finalRoundNumber = new FinalRoundNumber(scanner.nextInt());
-        return finalRoundNumber;
+        RoundNumber roundNumber = new RoundNumber(scanner.nextInt());
+        return roundNumber;
     }
 }
