@@ -13,4 +13,8 @@ public class FinalRoundNumber {
     public int getInt() {
         return finalRoundNumber;
     }
+
+    public boolean isFinalRound(int number) {
+        return number == finalRoundNumber;
+    }
 }
