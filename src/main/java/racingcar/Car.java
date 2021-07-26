@@ -1,8 +1,8 @@
 package racingcar;
 
 public class Car {
-    private final Name name;
-    private final Position position;
+    private Name name;
+    private Position position;
 
     public Car(Name name, Position position) throws Exception {
         if (isTooLong(name)) {
@@ -14,5 +14,14 @@ public class Car {
 
     private boolean isTooLong(Name name) {
         return name.getLength() > 5;
+    }
+
+    public void move(MovingRule movingRule) {
+        if (movingRule.movable())
+            this.position = new Position(this.position.getValue() + 1);
+    }
+
+    public int getPosition() {
+        return this.position.getValue();
     }
 }
