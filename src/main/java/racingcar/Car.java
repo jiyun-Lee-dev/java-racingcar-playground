@@ -1,6 +1,8 @@
 package racingcar;
 
-public class Car {
+import java.util.Objects;
+
+public class Car implements Comparable<Car> {
     private Name name;
     private Position position;
 
@@ -16,12 +18,38 @@ public class Car {
         return name.getLength() > 5;
     }
 
-    public void move(MovingRule movingRule) {
-        if (movingRule.movable())
+    public void move(MovingAction movingAction) {
+        if (movingAction.movable())
             this.position = new Position(this.position.getValue() + 1);
     }
 
     public int getPosition() {
         return this.position.getValue();
+    }
+
+    public String getName() {
+        return this.name.getValue();
+    }
+
+    @Override
+    public int compareTo(Car car) {
+        return car.getPosition() - getPosition();
+    }
+
+    public boolean equalsPosition(Car compared) {
+        return compared.getPosition() == getPosition();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(name, car.name) && Objects.equals(position, car.position);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, position);
     }
 }

@@ -1,6 +1,6 @@
 package racingcar;
 
-public class RandomMovingRule implements MovingRule{
+public class RandomMovingAction implements MovingAction {
     private static final int FORWARD_BOUND = 5;
 
     @Override
@@ -11,5 +11,4 @@ public class RandomMovingRule implements MovingRule{
     private int getRandomNumber() {
         return (int)(Math.random() * 10);
     }
-
 }

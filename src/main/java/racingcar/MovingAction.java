@@ -1,5 +1,5 @@
 package racingcar;
 
-public interface MovingRule {
+public interface MovingAction {
     boolean movable();
 }

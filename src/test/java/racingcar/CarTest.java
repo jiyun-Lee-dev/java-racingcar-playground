@@ -19,7 +19,7 @@ public class CarTest {
     @Test
     void 랜덤값이_5이상이면_위치값_1더해주는지_확인() throws Exception {
         Car car = new Car(new Name("hey"), new Position(0));
-        car.move(new MovingRule() {
+        car.move(new MovingAction() {
             @Override
             public boolean movable() {
                 return true;
